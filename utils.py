@@ -37,7 +37,6 @@ def getUserName(uuid):
     if api_call.get("ok"):
         people = api_call.get('members')
         for user in people:
-            print uuid
             # If the given ID is either this users id or name
             if uuid == user.get('id') or uuid == user.get('name'):
                 return user.get('name')

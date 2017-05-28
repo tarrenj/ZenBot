@@ -22,6 +22,7 @@ faqs = {
    "translations": "We have several people working on translations, checkout #documentation if you want ot help out!",
    "secure node setup": "Blockops has started writing a guide on this:  https://blockoperations.com/build-zencash-secure-node-part-1-prepare-vps/",
    "about": "This bot was written by tarrenj, and is generously hosted on a VPS provided by our lord and savior joshuayabut.  The source is at https://github.com/tarrenj/ZenBot.  Pull requests are welcome!",
-   "chain split": "A chain split was done at block 110,000 of the ZCL blockchain.  Anyone who held ZCL at that time is able to import their wallet into Eleos to get an equivilent amount of Zen.  You are now free to move your ZCL without effecting your ZEN",
-   "launch": "The launch is schedualed for May 30th, 2017.  The exact time has not been decided yet."
+   "chain split": "A chain split was done at block 110,000 of the ZCL blockchain.  Anyone who held ZCL at that time is able to import their wallet into Eleos to get an equivilent amount of Zen.  You are now free to move your ZCL without effecting your ZEN\nAlso see: wallet, launch",
+   "launch": "The launch is schedualed for May 30th, 2017.  The exact time has not been decided yet.",
+   "about": "I'm a bot written by smrtz, and I'm still very broken..."
     }
