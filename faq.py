@@ -25,5 +25,4 @@ faqs = {
    "chain split": "A chain split was done at block 110,000 of the ZCL blockchain on May 18th.  Anyone who held ZCL at that time is able to import their wallet into Eleos to get an equivilent amount of Zen.  You are now free to move your ZCL without effecting your ZEN\nAlso see: wallet, launch\n Also see: coins, wallet",
    "launch": "The launch is schedualed for May 30th, 2017.  The exact time has not been decided yet.",
    "coins": "Where are my coins?  How do I see them?\nIf you had your ZCL in Bittrex on May 18th, your Zen will show up automagically.  If not, you'll need to import your ZCL wallet.dat into a Zen wallet.\nAlso see: wallet",
-   "about": "I'm a bot written by smrtz, and I'm still very broken..."
     }
