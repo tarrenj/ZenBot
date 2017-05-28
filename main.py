@@ -4,7 +4,6 @@ import utils
 import faq
 import os
 from slackclient import SlackClient
-import responses # All responses go in dictionary format in this file, this is to keep it easy for people to submit PRs with updates/corrections.
 
 # Get the things!
 APIToken = os.environ["SLACK_BOT_TOKEN"]
@@ -34,8 +33,8 @@ def main():
                     cmd = post['text'][1:]
                     # Start checking for things to do
                     if cmd.startswith('faq'):
-                        resp = faq.getResp(cmd.split(' ', 1)[1]
-                        print resp
+                        rsp = faq.getRsp(str(cmd.split(' ', 1)[1]))
+                        print rsp
 
 # Boiler plate....
 if __name__ == "__main__":
