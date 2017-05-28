@@ -12,6 +12,22 @@ READ_WEBSOCKET_DELAY = 1
 SC = SlackClient(APIToken)
 BotToken = ''
 
+def getAnswer(question):
+    """
+    Get's the desired response for a given command, except the 'give' comand, that's done before this...
+    Param question(string): the command
+    Return answer(string): the desiered response
+    """
+    # Remove any trailing and leading whitespace
+    question = question.strip()
+    if question.startswith('faq'):
+        try:
+            print 'cmd: ' + cmd.split(' ', 1)
+            rsp = faq.getRsp(str(cmd.split(' ', 1)[1]))
+            return rsp
+        except:
+            return '(Probably) Invalid FAQ entry.  See: https://github.com/tarrenj/ZenBot/blob/master/faq.py'
+
 def main():
     """
     Where all the magic happens
@@ -31,17 +47,16 @@ def main():
                     print post
                     # Get an easy name for the post (minus the bang)
                     cmd = post['text'][1:]
-                    # Start checking for things to do
-                    if cmd.startswith('faq'):
-                        try:
-                            rsp = faq.getRsp(str(cmd.split(' ', 1)[1]))
-                            utils.fireAway(rsp, utils.getUserName(post['user']), post['channel'])
-                        except:
-                            Print("Exception in FAQ")
+                    # Who are we flagging in the response?  (If it's a DM, fireAway wont bother flagging)
                     if cmd.startswith('give'):
                         # Make sure we're giving to a valid user
                         target = utils.getUserName(cmd.split(' ', 1)[1].split(' ', 1)[0])
-                        print 'About to give %s something!' % target
+                        # Get everything after the given name
+                        cmd = cmd.split(' ', 1)[1].split(' ', 1)[1]
+                    else:
+                        target = utils.getUserName(post['user'])
+                    resp = getAnswer(cmd)
+                    utils.fireAway(resp, target, post['channel'])
 
 
 # Boiler plate....
