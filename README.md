@@ -14,3 +14,7 @@ TODO:
     base word counts off steps from BotName rather then position in message to allow for mid message bot useage
     Fix parse mode setting so @smrtz and @movrcx won't get flagged in the about message.  Currently, it just uses their github....
 
+TODO Tomorrow:
+    Test getUserToken and getUserName with both 'smrtz' and '@smrtz'
+    Test fireAway with and without channel
+

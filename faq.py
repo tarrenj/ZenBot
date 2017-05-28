@@ -11,7 +11,7 @@ def getRsp(cmd):
     """
     try:
         return faqs[cmd]
-    except KeyError:
+    except KeyError: # Will activate when the user requests a FAQ that isn't below
         return "I'm sorry. My responses are limited. You must ask the right questions."
 
 faqs = {
