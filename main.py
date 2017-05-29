@@ -32,6 +32,15 @@ def getAnswer(question):
             return 'Not yet written... Sorry'
         except:
             pass
+    # Gotta keep people happy
+    elif question.startswith("gotta keep"):
+        try:
+            # Get the given user
+            user = '@chronic'
+            # And keep them happy
+            return user + " can blow me."
+        except:
+            pass
     # Unknown command
     return 'That\'s not a thing yet.  I\'d give you help, but that\'s not a thing yet either...'
 
@@ -55,6 +64,7 @@ def main():
                     # Get an easy name for the post (minus the bang)
                     cmd = post['text'][1:]
                     # Who are we flagging in the response?  (If it's a DM, fireAway wont bother flagging)
+                    # This will flag users for invalid commands.  It probably shouldn't do that...
                     target = utils.getUserName(post['user'])
                     if cmd.startswith('give'):
                         # Make sure we're giving to a valid user
