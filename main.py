@@ -41,8 +41,15 @@ def getAnswer(question):
             return user + " can blow me."
         except:
             pass
+    # Help command
+    elif question.startswith("help"):
+        try:
+            # Eventually this should be dynamic
+            return 'Currently, I can only do faq and give.  FAQ is at https://github.com/tarrenj/zenbot/blob/master/faq.py'
+        except:
+            pass
     # Unknown command
-    return 'ERROR: That\'s not a thing yet.  I\'d give you help, but that\'s not a thing yet either...'
+    return 'ERROR: That\'s not a thing yet.\nAlso see: help'
 
 def main():
     """
