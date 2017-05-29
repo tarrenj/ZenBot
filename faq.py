@@ -12,7 +12,7 @@ def getRsp(cmd):
     try:
         return faqs[cmd]
     except KeyError: # Will activate when the user requests a FAQ that isn't below
-        return "I'm sorry. My responses are limited. You must ask the right questions."
+        return "ERROR: I'm sorry. My responses are limited. You must ask the right questions."
 
 faqs = {
    "why did you kill yourself?": "That, detective, is the right question.",

@@ -25,11 +25,11 @@ def getAnswer(question):
             rsp = faq.getRsp(option)
             return rsp
         except:
-            return '(Probably) Invalid FAQ entry.  See: https://github.com/tarrenj/ZenBot/blob/master/faq.py'
+            return 'ERROR: Invalid FAQ entry.  See: https://github.com/tarrenj/ZenBot/blob/master/faq.py'
     # Convert command
     elif question.startswith("convert"):
         try:
-            return 'Not yet written... Sorry'
+            return 'ERROR: Not yet written... Sorry'
         except:
             pass
     # Gotta keep people happy
@@ -42,7 +42,7 @@ def getAnswer(question):
         except:
             pass
     # Unknown command
-    return 'That\'s not a thing yet.  I\'d give you help, but that\'s not a thing yet either...'
+    return 'ERROR: That\'s not a thing yet.  I\'d give you help, but that\'s not a thing yet either...'
 
 def main():
     """
@@ -63,8 +63,7 @@ def main():
                     print post
                     # Get an easy name for the post (minus the bang)
                     cmd = post['text'][1:]
-                    # Who are we flagging in the response?  (If it's a DM, fireAway wont bother flagging)
-                    # This will flag users for invalid commands.  It probably shouldn't do that...
+                    # Who are we flagging in the response? fireAway won't flag if DM
                     target = utils.getUserName(post['user'])
                     if cmd.startswith('give'):
                         # Make sure we're giving to a valid user
@@ -72,6 +71,9 @@ def main():
                         # Get everything after the given name
                         cmd = cmd.split(' ', 1)[1].split(' ', 1)[1].strip()
                     resp = getAnswer(cmd)
+                    # Flag the poster if error
+                    if resp.startswith('ERROR:'):
+                        target = utils.getUserName(post['user'])
                     utils.fireAway(resp, target, post['channel'])
 
 
