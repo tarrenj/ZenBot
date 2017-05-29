@@ -26,5 +26,6 @@ faqs = {
    "launch": "The launch is scheduled for 11:59 UTC, May 30th, 2017.  ",
    "coins": "Where are my coins?  How do I see them?\nIf you had your ZCL in Bittrex on May 18th, your Zen will show up automagically.  If not, you'll need to import your ZCL wallet.dat into a Zen wallet.\nAlso see: wallet",
    "mining": "Currently people are mining on our testnet, the mainnet will be ready when we launch.\nAlso see: pools, launch",
-   "pools": "For a list of mining pools that support Zen, see https://bitcoin-and-altcoins.com/list-zen-mining-pools-zencash/\nAlso see: mining"
+   "pools": "For a list of mining pools that support Zen, see https://bitcoin-and-altcoins.com/list-zen-mining-pools-zencash/\nAlso see: mining",
+   "price": "No one can know what Zen will be priced at until after the launch.  Anything else is purly speculation.\nAlso see: launch, coins, chainsplit
     }
