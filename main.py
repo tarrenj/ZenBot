@@ -18,6 +18,7 @@ def getAnswer(question):
     Param question(string): the command
     Return answer(string): the desiered response
     """
+    # FAQ command
     if question.startswith("faq"):
         try:
             option = question.split(' ', 1)[1]
@@ -25,6 +26,14 @@ def getAnswer(question):
             return rsp
         except:
             return '(Probably) Invalid FAQ entry.  See: https://github.com/tarrenj/ZenBot/blob/master/faq.py'
+    # Convert command
+    elif question.startswith("convert"):
+        try:
+            return 'Not yet written... Sorry'
+        except:
+            pass
+    # Unknown command
+    return 'That\'s not a thing yet.  I\'d give you help, but that\'s not a thing yet either...'
 
 def main():
     """
