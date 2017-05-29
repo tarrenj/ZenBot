@@ -23,7 +23,7 @@ faqs = {
    "secure node setup": "Blockops has started writing a guide on this:  https://blockoperations.com/build-zencash-secure-node-part-1-prepare-vps/",
    "about": "This bot was written by tarrenj, and is generously hosted on a VPS provided by our lord and savior joshuayabut.  The source is at https://github.com/tarrenj/ZenBot.  Pull requests are welcome!",
    "chainsplit": "A chain split was done at block 110,000 of the ZCL blockchain on May 18th.  Anyone who held ZCL at that time is able to import their wallet into Eleos to get an equivilent amount of Zen, if your ZCL was on Bittrex, you should see your ZEN in your account.  You are now free to move your ZCL without effecting your ZEN\nAlso see: wallet, launch, coins",
-   "launch": "The launch is scheduled for 11:59 UTC, May 30th, 2017.  ",
+   "launch": "The launch is scheduled for 11:59 UTC, May 30th, 2017.\nhttps://blog.zencash.io/zencash-launch-scheduled-for-2359-utc-tuesday-may-30/",
    "coins": "Where are my coins?  How do I see them?\nIf you had your ZCL in Bittrex on May 18th, your Zen will show up automagically.  If not, you'll need to import your ZCL wallet.dat into a Zen wallet.\nAlso see: wallet",
    "mining": "Currently people are mining on our testnet, the mainnet will be ready when we launch.\nAlso see: pools, launch",
    "pools": "For a list of mining pools that support Zen, see https://bitcoin-and-altcoins.com/list-zen-mining-pools-zencash/\nAlso see: mining",
