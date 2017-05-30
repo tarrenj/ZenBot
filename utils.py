@@ -5,6 +5,7 @@ import os
 
 APIToken = os.environ["SLACK_BOT_TOKEN"]
 SC = SlackClient(APIToken)
+import re
 
 def getUserToken(username):
     """
@@ -12,9 +13,9 @@ def getUserToken(username):
     Params: user(string): Can be either username or token, with or without '@'
     Returns: the id(string)
     """
-    # Remove '@' if required
-    if username.startswith('@'):
-        username = username[1:]
+    # Remove '@, <, >' if required
+    # For some reason, this doesn't work...
+    username = re.sub('<>@', '', username)
     api_call = SC.api_call("users.list")
     if api_call.get('ok'):
         people = api_call.get('members')
@@ -30,9 +31,9 @@ def getUserName(uuid):
     Params: id(string): The id of the user
     Returns: the id(string)
     """
-     # Remove '@' if required
-    if uuid.startswith('@'):
-        uuid = uuid[1:]
+    # Remove '@, <, >' if required
+    # For some reason, this doesn't work...
+    uuid = re.sub('<>@', '', uuid)
     api_call = SC.api_call("users.list")
     if api_call.get("ok"):
         people = api_call.get('members')

@@ -71,17 +71,26 @@ def main():
                     # Get an easy name for the post (minus the bang)
                     cmd = post['text'][1:]
                     # Who are we flagging in the response? fireAway won't flag if DM
-                    target = utils.getUserName(post['user'])
                     if cmd.startswith('give'):
                         # Make sure we're giving to a valid user
                         target = utils.getUserName(cmd.split(' ', 1)[1].split(' ', 1)[0])
+                        print 'TARGET:' + target
                         # Get everything after the given name
-                        cmd = cmd.split(' ', 1)[1].split(' ', 1)[1].strip()
+                        try:
+                            cmd = cmd.split(' ', 1)[1].split(' ', 1)[1].strip()
+                        except:
+                            cmd = ''
+                    else:
+                        target = utils.getUserName(post['user'])
                     resp = getAnswer(cmd)
                     # Flag the poster if error
                     if resp.startswith('ERROR:'):
                         target = utils.getUserName(post['user'])
-                    utils.fireAway(resp, target, post['channel'])
+                    try:
+                        utils.fireAway(resp, target, post['channel'])
+                    except:
+                        resp = 'ERROR: something weird happened...'
+                        utils.fireAway(resp, post['user'], post['channel'])
 
 
 # Boiler plate....
