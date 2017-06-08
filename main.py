@@ -21,6 +21,9 @@ def getAnswer(question):
     # Check for broken command
     if question is None:
         return 'Error: Give me something to work with.'
+    # All aboard the HYPE TRAIN!
+    if question.startswith("choo choo") or question.startswith("moon"):
+        return 'All aboard the HYPE TRAIN!\nhttps://i.imgur.com/uADXW6D.gif'
     # Sols
     if question.startswith("sols"):
         try:
