@@ -2,10 +2,10 @@
 
 from slackclient import SlackClient
 import os
+import re
 
 APIToken = os.environ["SLACK_BOT_TOKEN"]
 SC = SlackClient(APIToken)
-import re
 
 def getUserToken(username):
     """
@@ -15,7 +15,7 @@ def getUserToken(username):
     """
     # Remove '@, <, >' if required
     # For some reason, this doesn't work...
-    username = re.sub('<>@', '', username)
+    #username = re.sub('<>@', '', username)
     api_call = SC.api_call("users.list")
     if api_call.get('ok'):
         people = api_call.get('members')
@@ -33,7 +33,10 @@ def getUserName(uuid):
     """
     # Remove '@, <, >' if required
     # For some reason, this doesn't work...
-    uuid = re.sub('<>@', '', uuid)
+    #uuid = re.sub('<>@', '', uuid)
+    if uuid.startswith('<@'):
+        uuid = uuid.strip('<@')
+        uuid = uuid.strip('>')
     api_call = SC.api_call("users.list")
     if api_call.get("ok"):
         people = api_call.get('members')
@@ -41,6 +44,8 @@ def getUserName(uuid):
             # If the given ID is either this users id or name
             if uuid == user.get('id') or uuid == user.get('name'):
                 return user.get('name')
+    else:
+        return None
 
 def fireAway(message, target, channel=None):
     """

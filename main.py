@@ -18,6 +18,9 @@ def getAnswer(question):
     Param question(string): the command
     Return answer(string): the desiered response
     """
+    # Check for broken command
+    if question is None:
+        return 'Error: Give me something to work with.'
     # FAQ command
     if question.startswith("faq"):
         try:
@@ -73,19 +76,24 @@ def main():
                     # Who are we flagging in the response? fireAway won't flag if DM
                     if cmd.startswith('give'):
                         # Make sure we're giving to a valid user
-                        target = utils.getUserName(cmd.split(' ', 1)[1].split(' ', 1)[0])
-                        print 'TARGET:' + target
+                        try:
+                            target = '@' + utils.getUserName(cmd.split(' ', 1)[1].split(' ', 1)[0])
+                        except IndexError:
+                            target = None
                         # Get everything after the given name
                         try:
                             cmd = cmd.split(' ', 1)[1].split(' ', 1)[1].strip()
                         except:
-                            cmd = ''
+                            cmd = None
                     else:
-                        target = utils.getUserName(post['user'])
-                    resp = getAnswer(cmd)
+                        target = post['user']
+                    if cmd is not None:
+                        resp = getAnswer(cmd)
+                    else:
+                        resp = "ERROR: cmd was None"
                     # Flag the poster if error
                     if resp.startswith('ERROR:'):
-                        target = utils.getUserName(post['user'])
+                        target = '@' + utils.getUserName(post['user'])
                     try:
                         utils.fireAway(resp, target, post['channel'])
                     except:
