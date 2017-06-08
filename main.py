@@ -35,6 +35,9 @@ def getAnswer(question):
             raise Exception('height')
         except:
             return 'ERROR: Something happened with height command.'
+    # Next command (stolen from Phrik, #archlinux channel on freenode)
+    if question.startswith("next"):
+        return 'Another satisfied customer! NEXT!'
     # FAQ command
     if question.startswith("faq"):
         try:
