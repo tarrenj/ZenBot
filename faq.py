@@ -27,5 +27,6 @@ faqs = {
    "coins": "Where are my coins?  How do I see them?\nIf you had your ZCL in Bittrex on May 18th, your Zen will show up automagically.  If not, you'll need to import your ZCL wallet.dat into a Zen wallet.\nAlso see: wallet",
    "mining": "Currently people are mining on our testnet, the mainnet will be ready when we launch.\nAlso see: pools, launch",
    "pools": "For a list of mining pools that support Zen, see https://bitcoin-and-altcoins.com/list-zen-mining-pools-zencash/\nAlso see: mining",
-   "welcome": "Welcome to the official ZenCash Slack channel!  Here you can talk with the Core Team and users alike.\n\nPlease be civil."
+   "welcome": "Welcome to the official ZenCash Slack channel!  Here you can talk with the Core Team and users alike.\n\nPlease be civil.",
+   "temp wallet": "Looking for an online or temporary wallet?  https://minez.zone/temp_zen_address"
     }
