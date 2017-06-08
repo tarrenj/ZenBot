@@ -28,5 +28,5 @@ faqs = {
    "mining": "Currently people are mining on our testnet, the mainnet will be ready when we launch.\nAlso see: pools, launch",
    "pools": "For a list of mining pools that support Zen, see https://bitcoin-and-altcoins.com/list-zen-mining-pools-zencash/\nAlso see: mining",
    "welcome": "Welcome to the official ZenCash Slack channel!  Here you can talk with the Core Team and users alike.\n\nPlease be civil.",
-   "temp wallet": "Looking for an online or temporary wallet?  https://minez.zone/temp_zen_address"
+   "temp wallet": "Looking for an online temporary wallet?  https://minez.zone/temp_zen_address"
     }
