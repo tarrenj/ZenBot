@@ -21,6 +21,20 @@ def getAnswer(question):
     # Check for broken command
     if question is None:
         return 'Error: Give me something to work with.'
+    # Sols
+    if question.startswith("sols"):
+        try:
+            # Just here for now...
+            raise Exception('sols')
+        except:
+            return 'ERROR: Something happened with sols command.'
+    # Get current block height
+    if question.startswith("height"):
+        try:
+            # Just here for now...
+            raise Exception('height')
+        except:
+            return 'ERROR: Something happened with height command.'
     # FAQ command
     if question.startswith("faq"):
         try:
@@ -29,8 +43,8 @@ def getAnswer(question):
             return rsp
         except:
             return 'ERROR: Invalid FAQ entry.  See: https://github.com/tarrenj/ZenBot/blob/master/faq.py'
-    # Convert command
-    elif question.startswith("convert"):
+    # Get current exchange rate command
+    elif question.startswith("EXC"):
         try:
             return 'ERROR: Not yet written... Sorry'
         except:
@@ -86,7 +100,7 @@ def main():
                         except:
                             cmd = None
                     else:
-                        target = post['user']
+                        target = '@' +  utils.getUserName(post['user'])
                     if cmd is not None:
                         resp = getAnswer(cmd)
                     else:
