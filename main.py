@@ -2,6 +2,7 @@
 
 import utils
 import faq
+import joins
 import os
 from slackclient import SlackClient
 
@@ -88,7 +89,12 @@ def main():
         while True:
             # This triggers me
             for post in SC.rtm_read():
-                if 'text' in post and post['text'].startswith('!'):
+                # Check for user join
+                if post['type'] == 'member_joined_channel':
+                    resp = joins.newJoin(utils.getUserName(post['user']), post['channel'])
+                    utils.fireAway(resp, post['user'])
+                # Check for ! leading message
+                elif 'text' in post and post['text'].startswith('!'):
                     print 'Ahh, I\'m triggered!'
                     print post
                     # Get an easy name for the post (minus the bang)
