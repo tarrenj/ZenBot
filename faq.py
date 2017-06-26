@@ -20,7 +20,7 @@ faqs = {
    "wallet": "Eleos is the recommended GUI wallet for Zen, but it's still in early development: https://github.com/zencashio/eleos\nMost of us are using the CLI wallet that's included with the official Zen project:  https://github.com/zencashio/zen",
    "exchange": "Many people here recommend using Bittrex: https://bittrex.com/",
    "translations": "We have several people working on translations, checkout #documentation if you want ot help out!",
-   "secure node setup": "Blockops has started writing a guide on this:  https://blockoperations.com/build-zencash-secure-node-part-1-prepare-vps/",
+   "secure node setup": "We're working on it:\nhttps://forum.zensystem.io/t/secure-node-system-software-development-project-discussion/126",
    "about": "This bot was written by tarrenj, and is generously hosted on a VPS provided by our lord and savior anarch3.  The source is at https://github.com/tarrenj/ZenBot.  Pull requests are welcome!",
    "chainsplit": "A chain split was done at block 110,000 of the ZCL blockchain on May 18th.  Anyone who held ZCL at that time is able to import their wallet into Eleos to get an equivilent amount of Zen, if your ZCL was on Bittrex, you should see your ZEN in your account.  You are now free to move your ZCL without effecting your ZEN\nAlso see: wallet, launch, coins",
    "launch": "The launch is scheduled for 11:59 UTC, May 30th, 2017.\nhttps://blog.zencash.io/zencash-launch-scheduled-for-2359-utc-tuesday-may-30/",

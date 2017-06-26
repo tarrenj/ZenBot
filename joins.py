@@ -12,7 +12,7 @@ def newJoin(user, channel):
     # General
     if channel == 'C4QGQ8SEM':
          message = "Welcome to the official Slack for ZenCash!\n\nThe official links are:\nhttps://github.com/ZenCashOfficial/\nhttps://zencashofficial.io/\n\nWe are not affiliated with:\nhttps://github.com/zencashio/\nhttps://zencash.io/\n\nPlease remember to be civil, and have a great day!"
-        return message
+         return message
 
     # Bottesting
     if channel == "C5JCER3NG":
