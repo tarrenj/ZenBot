@@ -33,7 +33,7 @@ def main():
                     if post['type'] == 'member_joined_channel':
                         resp = joins.newJoin(utils.getUserName(post['user']), post['channel'])
                         utils.fireAway(resp, post['user'])
-                    except:
+                except:
                         # Should eventually send error message to @smrtz
                         e = sys.exec_info()[0]
                         print e
